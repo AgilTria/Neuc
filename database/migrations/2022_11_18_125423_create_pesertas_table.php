@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pesertas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('peserta_id')->primary();
+            $table->string('nik');
+            $table->string('nama');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }

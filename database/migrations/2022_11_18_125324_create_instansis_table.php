@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('instansis', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('instansi_id')->primary();
+            $table->string('nama_instansi');
+            $table->boolean('');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
