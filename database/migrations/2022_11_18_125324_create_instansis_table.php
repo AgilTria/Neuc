@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('instansis', function (Blueprint $table) {
             $table->bigIncrements('instansi_id')->primary();
             $table->string('nama_instansi');
-            $table->boolean('');
+            $table->boolean('sudah_terverifikasi');
             $table->string('email');
             $table->string('password');
             $table->timestamps();
