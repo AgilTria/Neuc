@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('validasi_sertifikat');
 });
+Route::get('/instansi', function () {
+    return view('instansi.index');
+});
 
 Route::get('login', [AuthController::class, 'login']);
