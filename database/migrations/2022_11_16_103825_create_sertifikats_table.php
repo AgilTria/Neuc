@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sertifikats', function (Blueprint $table) {
-            $table->bigIncrements('no_seri')->primary();
+            $table->bigIncrements('no_seri');
             $table->bigInteger('acara_id');
             $table->bigInteger('instansi_id');
             $table->bigInteger('peserta_id');
