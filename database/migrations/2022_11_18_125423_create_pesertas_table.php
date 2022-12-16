@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pesertas', function (Blueprint $table) {
-            $table->bigIncrements('peserta_id')->primary();
+            $table->bigIncrements('peserta_id');
             $table->string('nik');
             $table->string('nama');
             $table->string('email');

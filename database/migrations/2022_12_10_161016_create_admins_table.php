@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sertifikats', function (Blueprint $table) {
-            $table->bigIncrements('no_seri')->primary();
-            $table->bigInteger('acara_id');
-            $table->bigInteger('instansi_id');
-            $table->bigInteger('peserta_id');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->bigIncrements('admin_id');
+            $table->string('email');
+            $table->string('password');
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sertifikats');
+        Schema::dropIfExists('admins');
     }
 };

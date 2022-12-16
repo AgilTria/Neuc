@@ -8,6 +8,8 @@
     <title>@yield('title', 'Beranda')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     @stack('styles')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 
 <body>
@@ -22,6 +24,7 @@
     @include('components.footer')
 
     @stack('scripts')
+    
 </body>
 
 </html>

@@ -23,7 +23,7 @@
                       <a class="navbar-item">
                           Instansi
                       </a>
-                      <a class="navbar-item">
+                      <a class="navbar-item" href="/acara">
                           Acara
                       </a>
                       <hr class="navbar-divider">

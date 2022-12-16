@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->bigIncrements('admin_id')->primary();
-            $table->string('email');
-            $table->string('password');
-            $table->string('nama');
+        Schema::create('acaras', function (Blueprint $table) {
+            $table->bigIncrements('acara_id');
+            $table->string('nama_acara');
+            $table->string('tanggal_acara');
+            $table->integer('instansi_id')->unsigned();
+            $table->string('template_sertifikat');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('acaras');
     }
 };

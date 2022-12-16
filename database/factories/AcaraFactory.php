@@ -17,10 +17,15 @@ class AcaraFactory extends Factory
     public function definition()
     {
         return [
-            'nama_acara' => fake()->nama_acara(),
-            'tanggal_acara' => fake()->tanggal_acara(),
-            'instansi_id' => fake()->instansi_id(),
-            'template_sertifikat' => fake()->template_sertifikat(),
+            'nama_acara' => fake()->sentence(),
+            'tanggal_acara' => fake()->dateTime(),
+            'instansi_id' => fake()->numerify('Instansi-####'),
+            'template_sertifikat' => fake()->fileExtension(),
+
+            // 'nama_acara' => fake()->nama_acara(),
+            // 'tanggal_acara' => fake()->tanggal_acara(),
+            // 'instansi_id' => fake()->instansi_id(),
+            // 'template_sertifikat' => fake()->template_sertifikat(),
             //
         ];
     }
