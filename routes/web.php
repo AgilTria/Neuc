@@ -20,5 +20,8 @@ Route::get('/', function () {
 Route::get('/instansi', function () {
     return view('instansi.index');
 });
+Route::get('/register', function () {
+    return view('instansi.register');
+});
 
 Route::get('login', [AuthController::class, 'login']);
