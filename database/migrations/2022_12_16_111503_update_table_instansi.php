@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('acaras', function (Blueprint $table) {
-            $table->bigIncrements('acara_id');
-            $table->string('nama_acara');
-            $table->string('tanggal_acara');
-            $table->bigInteger('instansi_id');
-            $table->string('template_sertifikat');
-            $table->timestamps();
+        Schema::table('instansis', function (Blueprint $table) {
+            $table->string('nomor_lembaga')->add();
+            $table->string('alamat')->add();
         });
     }
 
@@ -30,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acaras');
+        Schema::table('instansis', function (Blueprint $table) {
+            //
+        });
     }
 };

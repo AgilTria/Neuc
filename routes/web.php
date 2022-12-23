@@ -32,4 +32,8 @@ Route::get('/dashboard/edit', function () {
 Route::get('/navbar', function () {
     return view('menubar');
 });
+Route::get('/register', function () {
+    return view('instansi.register');
+});
+
 Route::get('login', [AuthController::class, 'login']);
