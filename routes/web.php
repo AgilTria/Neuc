@@ -18,6 +18,24 @@ use App\Http\Controllers\AcaraController;
 Route::get('/', function () {
     return view('validasi_sertifikat');
 });
+Route::get('/instansi', function () {
+    return view('instansi.index');
+});
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::get('/dashboard/verification', function () {
+    return view('admin.verification');
+});
+Route::get('/dashboard/edit', function () {
+    return view('admin.edit');
+});
+Route::get('/navbar', function () {
+    return view('menubar');
+});
+Route::get('/register', function () {
+    return view('instansi.register');
+});
 
 Route::get('login', [AuthController::class, 'login']);
 
