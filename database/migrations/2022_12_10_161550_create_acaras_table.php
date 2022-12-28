@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('acara_id');
             $table->string('nama_acara');
             $table->string('tanggal_acara');
-            $table->integer('instansi_id')->unsigned();
+            $table->bigInteger('instansi_id')->unsigned();
             $table->string('template_sertifikat');
             $table->timestamps();
 
