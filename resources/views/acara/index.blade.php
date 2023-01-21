@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- @include('components.navbar') -->
 
 
 @section('content')
@@ -23,12 +22,12 @@
     <table class="table table-bordered">
         <tr>
         <th>id</th>
-        <th>nama_acara</th>
-        <th>tanggal_acara</th>
-        <th>instansi_id</th>
-        <th>template_sertifikat</th>
+        <th>nama acara</th>
+        <th>tanggal acara</th>
+        <th>instansi id</th>
+        <th>template sertifikat</th>
 
-        <th width="280px">Action</th>
+        <th width="280px">Aksi</th>
         </tr>
         @foreach ($acara as $a)
         <tr>

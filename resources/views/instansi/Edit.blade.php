@@ -1,19 +1,18 @@
+
 @extends('layouts.app')
 
-<!-- @section('title','SMK BARUMEKTA BANTUL') -->
-
 @section('content')
-    <form>
-    div class="row">
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div>
-                <h2>Edit Instansi</h2>
+                <h2>Edit Acara</h2>
             </div>
             <div>
-                <a class="btn btn-primary" href="{{ route('validasi_sertifikat') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('instansi.index') }}"> Back</a>
             </div>
         </div>
     </div>
+   
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -24,6 +23,7 @@
             </ul>
         </div>
     @endif
+  
     <form action="{{ route('instansi.update',$instansi->instansi_id) }}" method="POST">
         @csrf
         @method('PUT')

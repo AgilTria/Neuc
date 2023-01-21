@@ -2,15 +2,13 @@
   
 @section('content')
 <div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div>
+    <div class="col-lg-6 margin-tb">
+        <div class="container-fluid">
+        <div class="mb-3">
             <h2>Add New Acara</h2>
         </div>
-        <div>
-            <a class="btn btn-primary" href="{{ route('acara.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
+       
+   
    
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -25,26 +23,28 @@
    
 <form action="{{ route('acara.store') }}" method="POST">
     @csrf
-  
+    
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>nama acara :</strong>
-                <input  type="text" name="nama_acara" class="" placeholder="Nama Acara">
+                <input class="form-control" type="text" name="nama_acara" class="" placeholder="Nama Acara">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            tanggal acara<input type='date' id='tanggal' name='tanggal_acara' onchange='cetakTanggal()'/><br/>
+            tanggal acara
+            <input class="form-control" type='date' id='tanggal' name='tanggal_acara' onchange='cetakTanggal()'/><br/>
 
                 <!-- <strong>tanggal acara:</strong>
                 <input class="form-control" name="kelas" placeholder="Kelas"></input> -->
             </div>
         </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>instansi id :</strong>
-                <input  type="numeric" step="1" value="" name="instansi_id" class="" placeholder="Instansi Id">
+                <input class="form-control" type="numeric" step="1" value="" name="instansi_id" class="" placeholder="Instansi Id">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -53,9 +53,12 @@
          </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
+            <a class="btn btn-primary" href="{{ route('acara.index') }}"> Back</a>
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
+    </div>
+</div>
    
 </form>
 <script>

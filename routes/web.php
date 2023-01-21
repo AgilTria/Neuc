@@ -3,6 +3,10 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcaraController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\InstansiController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\validasi_sertfikatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,7 @@ use App\Http\Controllers\AcaraController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('validasi_sertifikat');
@@ -37,28 +42,46 @@ Route::get('/register', function () {
     return view('instansi.register');
 });
 
-Route::get('login', [AuthController::class, 'login']);
 
-// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('login', [AuthController::class, 'login']);
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::middleware((['auth']))->group(function(){ 
+Route::resource('acara', AcaraController::class);
+Route::get('acara.edit', [App\Http\Controllers\AcaraController::class, 'edit']);
+// Route::get('acara.edit', AcaraController::class);
+
+Route::resource('instansi', InstansiController::class);
+Route::get('instansi.edit', [App\Http\Controllers\InstansiController::class, 'edit']);
+
+Route::resource('validasi_sertifikat', validasi_sertfikatController::class);
+
+//Route::resource('user.index', userController::class);
+
+
+});
+
+
+
+
+
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Auth::routes();
+// // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// // Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('/acara',[App\Http\Controllers\AcaraController::class, 'index']);
 
 // Route::get('/acara/create', [App\Http\Controllers\AcaraController::class, 'create']);
-
-Route::resource('acara', AcaraController::class);
-Route::get('acara.edit', [App\Http\Controllers\AcaraController::class, 'edit']);
-// Route::get('acara.edit', AcaraController::class);

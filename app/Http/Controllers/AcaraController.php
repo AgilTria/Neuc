@@ -129,6 +129,7 @@ class AcaraController extends Controller
     public function destroy(Acara $acara)
     {
         $acara->delete();
+        
        
         return redirect()->route('acara.index')
                         ->with('success','Acara deleted successfully');

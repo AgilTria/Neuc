@@ -1,3 +1,6 @@
+<!-- @include('components.navbar') -->
+
+
 @extends('layouts.app')
 
 @section('content')
